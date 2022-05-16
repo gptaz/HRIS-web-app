@@ -14,6 +14,8 @@ class StaffController extends Controller
      */
     public function index()
     {
+        if(session('staff')=='0')
+            return redirect('main');
         $staff = Staff::all();
         //return $staff;
         return view('staff',compact('staff'));
